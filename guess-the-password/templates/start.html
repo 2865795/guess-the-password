@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/start.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <title>Guess the password</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="bg">
+            <div class="info">
+                <p><span class="orange"></span>Не верная позиция</p>
+                <p><span class="red"></span>Не верная цифра</p>
+            </div>
+            <div class="result">
+                {%for i in answer%}
+                <p>
+                    {%for el in i%}
+                    <span class="{{el['class']}}">{{el['value']}}</span>
+                    {%endfor%}
+                </p>
+                {%endfor%}
+            </div>
+            <div class="move">
+                <p>Осталось {{move}} попыток</p>
+            </div>
+            <div class="counters">
+                <div class="counter">
+                    <button onclick="increment(0)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                        </svg></button>
+                    <span id="counter1">{{ counters[0] }}</span>
+                    <button onclick="decrement(0)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg></button>
+                </div>
+                <div class="counter">
+                    <button onclick="increment(1)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                        </svg></button>
+                    <span id="counter2">{{ counters[1] }}</span>
+                    <button onclick="decrement(1)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg></button>
+                </div>
+                <div class="counter">
+                    <button onclick="increment(2)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                        </svg></button>
+                    <span id="counter3">{{ counters[2] }}</span>
+                    <button onclick="decrement(2)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg></button>
+                </div>
+                <div class="counter">
+                    <button onclick="increment(3)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                        </svg></button>
+                    <span id="counter4">{{ counters[3] }}</span><button onclick="decrement(3)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg></button>
+                </div>
+            </div>
+            <div class="form">
+                <form action="/result" method="post">
+                    <button type="submit">Разблокировать</button>
+                </form>
+            </div>
+            <script>
+                function increment(counterId) {
+                    window.location.href = '/increment/' + counterId;
+                }
+
+                function decrement(counterId) {
+                    window.location.href = '/decrement/' + counterId;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

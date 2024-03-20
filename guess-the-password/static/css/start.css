@@ -1,0 +1,157 @@
+.red {
+    background-color: rgb(240, 27, 27);
+    border-radius: 50%;
+    border: 1px solid rgb(240, 27, 27);
+    box-shadow: 0 0 10px 1px red;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(5, 5, 5);
+    text-shadow: 1px 1px 5px rgb(44, 44, 44), 1px 1px 10px white, ;
+    text-align: center;
+}
+
+.green {
+    background-color: rgb(15, 156, 15);
+    border-radius: 50%;
+    border: 1px solid rgb(15, 156, 15);
+    box-shadow: 0 0 10px 1px green;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(5, 5, 5);
+    text-shadow: 1px 1px 5px rgb(44, 44, 44), 1px 1px 10px white, ;
+    text-align: center;
+}
+
+.orange {
+    background-color: rgb(245, 163, 10);
+    border-radius: 50%;
+    border: 1px solid rgb(245, 163, 10);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    box-shadow: 0 0 10px 1px orange;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(5, 5, 5);
+    text-shadow: 1px 1px 5px rgb(44, 44, 44), 1px 1px 10px white, ;
+    text-align: center;
+}
+
+.wrapper {
+    width: 299px;
+    height: 600px;
+    background-image: url("../images/rodger_opacity.png"), radial-gradient(circle, hsla(207, 69%, 76%, 1) 0%, hsla(209, 52%, 46%, 1) 100%);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.bg {
+    width: 300px;
+    height: 600px;
+    background-image: url(../images/mobile_transparency.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.info {
+    width: inherit;
+    align-self: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.info p {
+    margin: 5px;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: snow;
+    text-shadow: 1px 1px 5px white, 1px 1px 10px rgb(44, 44, 44);
+}
+
+.result {
+    width: 280px;
+    height: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.move p {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: snow;
+    text-shadow: 1px 1px 5px white, 1px 1px 10px rgb(44, 44, 44);
+}
+
+.counters {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter span {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: snow;
+    text-shadow: 1px 1px 5px white, 1px 1px 10px rgb(44, 44, 44);
+}
+
+button {
+    background: none;
+    border: none;
+    color: snow;
+    text-shadow: 1px 1px 5px white, 1px 1px 10px rgb(44, 44, 44);
+}
+
+.form button {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
