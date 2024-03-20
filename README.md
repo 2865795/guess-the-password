@@ -18,6 +18,3 @@
 
 #### Видео геймплея:
 
-
-https://github.com/2865795/guess-the-password/assets/162982993/ce6f418d-7a1f-49a4-8dac-0508326d09c5
-
