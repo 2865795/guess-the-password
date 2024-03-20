@@ -5,9 +5,7 @@ import random
 app = Flask(__name__)
 
 
-number = list(range(10))
-code = random.sample(number, 4)
-
+code = random.sample(list(range(10)), 4)
 counters = [0, 0, 0, 0]
 result = []
 move_counter = 6
@@ -38,7 +36,9 @@ def reset():
     result = []
     global move_counter
     move_counter = 6
-    return counters, result, move_counter
+    global code
+    code = random.sample(list(range(10)), 4)
+    return counters, result, move_counter, code
 
 
 @app.route('/', methods=['POST', 'GET'])
